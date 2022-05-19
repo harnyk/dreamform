@@ -14,7 +14,10 @@ export type DynamicFieldDescriptor<
 > = T & IFieldIdentifier & Record<string, any>;
 
 export type DescriptorResolver<
-    T extends DynamicFieldDescriptor<IFieldProps<any>> = DynamicFieldDescriptor<
+    InputType extends DynamicFieldDescriptor<
         IFieldProps<any>
-    >
-> = (d: T) => DynamicFieldDescriptor[];
+    > = DynamicFieldDescriptor<IFieldProps<any>>,
+    OutputType extends DynamicFieldDescriptor<
+        IFieldProps<any>
+    >[] = DynamicFieldDescriptor<IFieldProps<any>>[]
+> = (d: InputType) => OutputType;
