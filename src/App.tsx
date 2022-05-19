@@ -3,27 +3,7 @@ import React, { useMemo } from 'react';
 import { DynamicControl } from './dreamform/DynamicControl';
 import { DescriptorResolver } from './dreamform/types';
 
-const fields = [
-    {
-        $type: 'epc',
-        label: 'EPC',
-        name: 'epc',
-    },
-    {
-        $type: 'choice',
-        label: 'Choice',
-        name: 'choice',
-        items: [
-            { label: 'A', value: 'A' },
-            { label: 'B', value: 'B' },
-        ],
-    },
-    {
-        $type: 'localized-text',
-        label: 'Description',
-        name: 'description',
-    },
-] as const;
+const fields = [{ $type: 'example-form' }];
 
 export const App = () => {
     const resolveDescriptor =
